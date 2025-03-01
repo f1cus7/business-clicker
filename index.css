@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-drag: none; /* Для Safari */
+}
+
+#head-section-card {
+  width: 35vw;
+  background: linear-gradient(to right, rgb(90, 90, 90), rgb(34, 34, 34));
+  height: 35vh;
+  border-radius: 0 0 5vh 5vh;
+}
+
+#card-color {
+  width: 90%;
+  height: 50%;
+  background-color: #1f1f1f;
+  margin: 2% auto 2% auto;
+  border-radius: 2vh;
+}
+
+#text-num {
+  color: gray;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.img-card {
+  width: auto;
+  height: 2vh;
+  position: relative;
+  top: 0.5vh;
+  margin-right: 1%;
+}
+
+.balance {
+  color: white;
+  font-weight: bold;
+  margin-top: 0vh;
+  font-size: 4vh;
+}
+
+.money-for-click {
+  width: 90%;
+  height: 8vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: 2vh;
+  font-weight: bold;
+  color: white;
+  border-radius: 2vh;
+  font-size: 3vh;
+}
+
+.swap-active {
+  background-color: #1f1f1f;
+  border-radius: 1vh;
+  color: white;
+  transition: 0.3s;
+}
+
+.swap-active:hover {
+  background-color: #272727;
+}
+
+.btn-buy-upd-click {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1vh;
+  border-radius: 1.5vh;
+  margin-right: 1vh;
+  transition: 0.3s;
+}
+
+.btn-buy-upd-click:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-buy-upd-click:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.d-none {
+  display: none;
+}
+
+/* business */
+
+#head-section-card-business {
+  width: 35vw;
+  background: linear-gradient(to right, rgb(255, 84, 238), rgb(165, 3, 138));
+  height: 35vh;
+  border-radius: 0 0 5vh 5vh;
+}
+
+#tap-image {
+  transition: 0.1s;
+}
+
+#tap-image:hover {
+  transform: scale(1.1);
+}
+
+#tap-image:active {
+  transform: scale(0.8);
+}
+
+.btn-swap {
+  transition: 0.3s;
+  border: 1px solid rgba(29, 29, 29, 0);
+  border-radius: 2vh;
+}
+
+.btn-swap:hover {
+  border: 1px solid rgba(14, 14, 14, 1);
+}
+
+.opn-business,
+.upd-business {
+  cursor: pointer;
+  transition: .3s;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 3vh;
+  border-radius: 2vh;
+}
+
+.opn-business:hover,
+.upd-business:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.opn-business:active,
+.upd-business:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.business-buy {
+  width: 35vw;
+  margin-top: 2vh;
+  height: 12vh;
+  border: .3vh solid #1f1f1f;
+  border-radius: 2vh;
+  padding: 1vh;
+}
+
+.btn-buy-business {
+  border: 2px solid #474747;
+  padding: 1vh;
+  margin-left: 1vw;
+  border-radius: 1vh;
+  background-color: #474747;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 2vh;
+}
+
+.btn-buy-business:hover {
+  background-color: #595959;
+  border-color: #888;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.btn-buy-business:active {
+  background-color: #333;
+  border-color: #bbb;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+
+}
