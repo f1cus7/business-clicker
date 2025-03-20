@@ -12,25 +12,29 @@
     <div class="zarabotok">
     <div class=" flex justify-center">
         <section id="head-section-card" class="">
-        <div class=" p-4" id="card-color">
+        <div id="card-color">
             <div class="flex">
             <img src="images/mcard.png" alt="" class="img-card">
-            <p id="text-num" style="display: flex; justify-content: space-between; width: 100%;">**** 1337
+            <p id="text-num" style="display: flex; justify-content: space-between; width: 100%;">**** 1984
                 <span>07/32</span>
             </p>
-        </div>
+            </div>
             <div style="color: gray; font-weight: bold; font-size: 2vh; margin-top: 2vh;">Баланс:</div>
             <div class="balance">$ 0.00</div>
-            
         </div>
-        <div class="flex justify-center">
+    <div class="flex justify-center">
         <div class="money-for-click flex justify-around items-center">
-            <p>$<span> 1.00</span> за клик <button class="btn-buy-upd-click"> $ <span>300.00</span> </button><span> 1</span></p>
+            <p>$<span id="bonusForClick"> 1.00</span>
+             за клик <button class="btn-buy-upd-click" onclick="UpdateClick()"> $ <span id="costOfUpdate">50</span>
+             </button><span id="lvlOfUpdate"> 1</span></p>
         </div>
     </div>
         </section>
     </div>
-    <section class="flex justify-center items-center" style="height: 45vh;  cursor: pointer;" id="section-click">
+    <div style="height: 5vh;" class="flex justify-center items-center" id="btns-ad-watch">
+        
+    </div>
+    <section class="flex justify-center items-center h-40vh" style="cursor: pointer;" id="section-click">
         <img src="images/finger.png" alt="" style="width: 10vh;" id="tap-image">
     </section>
     
@@ -40,21 +44,20 @@
     <div class="business-container d-none">
     <div class="business">
         <div class=" flex justify-center" style="color: white; font-size: 4vh; font-weight: bold;">
-            <section id="head-section-card-business" class="p-4">
+            <section id="head-section-card-business" class="padding-for-swap">
                 Бизнес
-                <div style="background-color: rgba(255, 255, 255, 0.2); padding: 1vh; border-radius: 2vh; margin-top: 2vh;">
+                <div style="background-color: rgba(255, 255, 255, 0.2); padding: 1vh; border-radius: 2vh; margin-top: 2vh;" id="businessBonusNode">
                     $ 0.00 в секунду
                 </div>
                 <div class="flex justify-center" style="font-size: 2vh;">
-                    <div class="flex justify-center items-center p-4 opn-business">Открытие бизнеса</div>
-                    <div class="flex justify-center items-center p-4 upd-business">Улучшение бизнеса</div>
+                    <button class="flex justify-center items-center padding-for-swap opn-business">Открытие бизнеса</button>
+                    <button class="flex justify-center items-center padding-for-swap upd-business">Улучшение бизнеса</button>
                 </div>
             </section>
-            
         </div>
     </div>
-    <section class="flex justify-center items-center" style="height: 45vh; cursor: pointer;">
-        
+    <section class="flex justify-center items-center h-45 flex-col" id="businessBuyed">
+
     </section>
 </div>
 
@@ -62,74 +65,266 @@
     <!-- открытие бизнеса -->
     <div class="opn-business-opened d-none">
         <div class="flex justify-center items-center">
-            <div class="" style="height: 80vh;">
-                <div class="business-buy flex items-center justify-center gap-5">
-                    <img src="images/maxwell.png" alt="" style="width: 10vh;">
-                    <p style="font-size: 2vh;">
-                        <b style="font-size: 2vh; font-weight: bolder;">Создание мемов</b>
-                            <br>
-                        <i style=" font-size: 1.5vh;">смех продлевает жизнь!</i>
+            <div id="from-js-for" style="height: 80vh;">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="upd-business-opened d-none">
+        <div class="flex justify-center items-center">
+            <div id="upd-business-from-js" style="height: 80vh;">
+                <div class="flex justify-center flex-col items-center ubrat-cherez-d-none">
+                <h1 class="no-business">Вы еще не открыли бизнесы</h1>
+                <img src="images/404.png" alt="" style="width: 15vw;" ></div>
+
+                <div class="d-none ubrat-m">
+                <div class="business-upd " id="updMem">
+                    <img src="images/mem.png" alt="" class="w-4vw">
+                    <p class="fs-2vh">
+                        <b style="font-size: 2.3vh; font-weight: bolder;">Cоздание мемов | <span  id="text-mem">1</span> уровень</b>
                     </p>
-                    <button class="btn-buy-business">Купить бизнес</button>
-                    <p style="text-align: center;color: rgb(0, 124, 0); font-weight: bold; font-size: 2vh;">1000 $ <br> <span style="color: #14ad00;">7.50 $ в сек</span></p>
+                    <button class="hover:bg-[#15803d] active:bg-[#157347] btn-upd flex items-center justify-evenly" id="btnUpdMemll" onclick="UpdateMem()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="100%" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16" style="margin: 0; padding: 0">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                          <div>
+                          <p id="btnUpdmemCost">2500 $</p>
+                          <p id="btnUpdmemBonus">+ 143 $ в сек.</p>
+                        </div>
+                    </button>
+                </div></div>
+
+
+                <div class="d-none ubrat-s">
+                <div class="business-upd" id="updShaurma">
+                    <img src="images/shaurma.png" alt="" class="w-4vw">
+                    <p class="fs-2vh">
+                        <b style="font-size: 2.3vh; font-weight: bolder;">Шаурмечная | <span  id="text-shaurma">1</span> уровень</b>
+                    </p>
+                    <button class="hover:bg-[#15803d] active:bg-[#157347] btn-upd flex items-center justify-evenly" id="btnUpdShaurma" onclick="UpdateShaurma()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="100%" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16" style="margin: 0; padding: 0">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                          <div>
+                          <p id="btnUpdshaurmaCost">25000 $</p>
+                          <p id="btnUpdshaurmaBonus">+ 1287 $ в сек.</p>
+                        </div>
+                    </button>
+                </div></div>
+
+
+                <div class="d-none ubrat-u">
+                <div class="business-upd" id="updStartup">
+                    <img src="images/startup.png" alt="" class="w-4vw">
+                    <p class="fs-2vh">
+                        <b style="font-size: 2.3vh; font-weight: bolder;">Открыть стартап | <span  id="text-startup">1</span> уровень</b>
+                    </p>
+                    <button class="hover:bg-[#15803d] active:bg-[#157347] btn-upd flex items-center justify-evenly" id="btnUpdStartup" onclick="UpdateStartup()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="100%" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16" style="margin: 0; padding: 0">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                          <div>
+                          <p id="btnUpdstartupCost">250000 $</p>
+                          <p id="btnUpdstartupBonus">+ 12870 $ в сек.</p>
+                        </div>
+                    </button>
+                </div></div>
+
+
+                <div class="d-none ubrat-b">
+                <div class="business-upd" id="updBank">
+                    <img src="images/bank.png" alt="" class="w-4vw">
+                    <p class="fs-2vh">
+                        <b style="font-size: 2.3vh; font-weight: bolder;">Cоздание банка | <span  id="text-bank">1</span> уровень</b>
+                    </p>
+                    <button class="hover:bg-[#15803d] active:bg-[#157347] btn-upd flex items-center justify-evenly" id="btnUpdBank" onclick="UpdateBank()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="100%" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16" style="margin: 0; padding: 0">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                          <div>
+                          <p id="btnUpdbankCost">2500000 $</p>
+                          <p id="btnUpdbankBonus">+ 41900 $ в сек.</p>
+                        </div>
+                    </button>
+                </div></div>
+
+
+                <div class="d-none ubrat-c">
+                <div class="business-upd" id="updCountry">
+                    <img src="images/country.png" alt="" class="w-4vw">
+                    <p class="fs-2vh">
+                        <b style="font-size: 2.3vh; font-weight: bolder;">Основание страны | <span  id="text-country">1</span> уровень</b>
+                    </p>
+                    <button class="hover:bg-[#15803d] active:bg-[#157347] btn-upd flex items-center justify-evenly" id="btnUpdCountry" onclick="UpdateCountry()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="100%" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16" style="margin: 0; padding: 0">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                          <div>
+                          <p id="btnUpdcountryCost">25000000 $</p>
+                          <p id="btnUpdcountryBonus">+ 72220 $ в сек.</p>
+                        </div>
+                    </button>
+                </div></div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- предметы -->
+    <div class="items-container d-none">
+        <div class="items">
+            <div class=" flex justify-center" style="color: white; font-size: 4vh; font-weight: bold;">
+                <section id="head-section-card-items" class="padding-for-swap">
+                    Предметы
+                    <div class="flex justify-center" style="font-size: 2vh;">
+                        <button class="flex justify-center items-center items-buy-btn" id="cars-btn">Машины</button>
+                        <button class="flex justify-center items-center items-buy-btn" id="planes-btn">Самолеты</button>
+                    </div>
+                    <div class="flex justify-center" style="font-size: 2vh;">
+                        <button class="flex justify-center items-center items-buy-btn" id="houses-btn">Дома</button>
+                        <button class="flex justify-center items-center items-buy-btn" id="pictures-btn">Картины</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <section class="flex justify-center items-center h-45">
+            <div class="flex h-45" style="width: 35vw; padding: 1vw;">
+                <div class="grid-person-container">
+                     <div class="person-icon left-side">
+                        <div class="container-of-cards">
+                            <div class="person-image">
+                                <img src="images/avatar-1.png" alt="" class="person-image-image" style="border: 0.1vh solid black;padding: 0.5vh; border-radius: 1vh;">
+                                <div class="flex flex-col person-btns-avatar" >
+                                    <button id="person-btn-avatar-up">↑</button>
+                                    <button id="person-btn-avatar-down">↓</button>
+                                </div>
+                            </div>
+                            <div class="person-text flex">
+                            <div style="display: flex; justify-content: space-between; align-items: center;" ><p id="nickname" style="font-size: 1.5vh;">Никнейм</p>
+                                <button id="btn-change-nick">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="3vh" fill="white" class="bi bi-pencil svg-red-nick" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="3vh" fill="black" class="bi bi-check-square svg-agree-nick d-none" viewBox="0 0 16 16">
+                                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                                </svg>
+                                </button>
+                            </div>
+                            
+                            </div>
+                        </div>
+                     </div>
+
+                     <div class="person-statistic left-side">
+                        <p style="font-size:3vh; margin-left: 2vw; font-weight: bold;">Статистика:</p>
+                        <div class="statistic-container">
+                            <p>Купленно предметов: <br><span id="buyedItemsNode">0</span> / 60</p>
+                            <hr style="border: .2vh solid black;">
+                            <p>Улучшенно бизнесов: <br><span id="UpdatedBusinessesNode">0</span> / 50</p>
+                            <hr style="border: .2vh solid black;">
+                            <p>Проведено в игре: <br><span id="timeInGame">0 час 0 мин</span></p>
+                        </div>
+                     </div>
+
+                     <div class="person-car right-side">
+                        <div class="container-of-cards" id="using-car">
+                            <div class="person-image">
+                                <img src="images/person-car.jpg" alt="" class="person-image-image">
+                            </div>
+                            <div class="person-text">
+                            Здесь появится ваша выбранная машина
+                            </div>
+                            
+                        </div>
+                     </div>
+
+                     <div class="person-plane right-side">
+                        <div class="container-of-cards" id="using-plane">
+                            <div class="person-image">
+                                <img src="images/personal-plane.jpg" alt="" class="person-image-image">
+                            </div>
+                            <div class="person-text">
+                            Здесь появится ваш выбранный самолёт
+                            </div>
+                        </div>
+                     </div>
+
+                     <div class="person-house right-side">
+                        <div class="container-of-cards" id="using-house">
+                            <div class="person-image">
+                                <img src="images/person-house.jpg" alt="" class="person-image-image">
+                            </div>
+                            <div class="person-text">
+                            Здесь появится ваш выбранный дом
+                            </div>
+                        </div>
+                     </div>
+
+                     <div class="person-picture right-side">
+                        <div class="container-of-cards" id="using-picture">
+                            <div class="person-image">
+                                <img src="images/person-picture.jpg" alt="" class="person-image-image">
+                            </div>
+                            <div class="person-text">
+                            Здесь появится ваша выбранная картина
+                            </div>
+                        </div>
+                     </div>
+
                 </div>
-                <div class="business-buy flex items-center justify-center gap-5">
-                    <img src="images/shaurma.png" alt="" style="width: 7vh;">
-                    <p style="font-size: 2vh;">
-                        <b style="font-size: 2vh; font-weight: bolder;">Шаурмечная</b>
-                            <br>
-                        <i style=" font-size: 1.5vh;">шаурма появилась в <br>Османской империи.</i>
-                    </p>
-                    <button class="btn-buy-business">Купить бизнес</button>
-                    <p style="text-align: center;color: rgb(0, 124, 0); font-weight: bold; font-size: 2vh;">5000 $ <br> <span style="color: #14ad00;">20 $ в сек</span></p>
-                </div>
-                <div class="business-buy flex items-center justify-center gap-5">
-                    <img src="images/startup.png" alt="" style="width: 10vh;">
-                    <p style="font-size: 2vh;">
-                        <b style="font-size: 2vh; font-weight: bolder;">Открыть стартап</b>
-                            <br>
-                        <i style=" font-size: 1.5vh;">Стартапы зародились<br> в Кремниевой долине.</i>
-                    </p>
-                    <button class="btn-buy-business">Купить бизнес</button>
-                    <p style="text-align: center;color: rgb(0, 124, 0); font-weight: bold; font-size: 2vh;">25000 $ <br> <span style="color: #14ad00;">100 $ в сек</span></p>
-                </div>
-              <div class="business-buy flex items-center justify-center gap-5">
-                <img src="images/bank.png" alt="" style="width: 10vh;">
-                    <p style="font-size: 2vh;">
-                        <b style="font-size: 2vh; font-weight: bolder;">Создание банка</b>
-                            <br>
-                        <i style=" font-size: 1.5vh;">Первый банк открылся<br> в 1472 году.</i>
-                    </p>
-                    <button class="btn-buy-business">Купить бизнес</button>
-                    <p style="text-align: center;color: rgb(0, 124, 0); font-weight: bold; font-size: 2vh;">100000 $ <br> <span style="color: #14ad00;">100 $ в сек</span></p>
-              </div>
-                <div class="business-buy flex items-center justify-center gap-5">
-                    <img src="images/country.png" alt="" style="width: 10vh;">
-                    <p style="font-size: 2vh;">
-                        <b style="font-size: 2vh; font-weight: bolder;">Основание страны</b>
-                            <br>
-                        <i style=" font-size: 1.5vh;">Самая маленькая страна<br> — Ватикан.</i>
-                    </p>
-                    <button class="btn-buy-business">Купить бизнес</button>
-                    <p style="text-align: center;color: rgb(0, 124, 0); font-weight: bold; font-size: 2vh;">1000000 $ <br> <span style="color: #14ad00;">500 $ в сек</span></p>
-                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- айтемы  -->
+     
+     <!-- машины -->
+    <div id="cars" class="d-none">
+        <div class="flex justify-center">
+            <div class="cars-container buy-containers">
+            
+        
+            </div>
+        </div>
+    </div>
+
+    <div id="planes" class="d-none">
+        <div class="flex justify-center">
+            <div class="planes-container buy-containers">
+            
+        
+            </div>
+        </div>
+    </div>
+
+    <div id="houses" class="d-none">
+        <div class="flex justify-center">
+            <div class="houses-container buy-containers">
+            
+        
+            </div>
+        </div>
+    </div>
+    <div id="pictures" class="d-none">
+        <div class="flex justify-center">
+            <div class="pictures-container buy-containers">
+            
+        
             </div>
         </div>
     </div>
 
 
-    <!-- предметы -->
-    <div class="items-container d-none">
-
-    </div>
-
     <!-- свап -->
     <div class="flex justify-center">
-        <section style="height: 20vh; width: 35vw;" class="flex justify-center items-center">
+        <section style="height: 20vh; width: 35vw;" class="flex justify-center items-center" id="swap-js">
             <div class="btn-swap" style="width: 33%; text-align: center;" id="btn-swap-1">
-                <button style="font-weight: bold; color: gray; font-size: 2vh;" class="p-2" id="business-btn">
-                    <div class="flex justify-center p-2" style="width: 10vh;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-building-fill-check" viewBox="0 0 16 16" id="svg-1">
+                <button style="font-weight: bold; color: gray; font-size: 2vh;" class="padding-for-swap" id="business-btn">
+                    <div class="flex justify-center padding-for-swap" style="width: 10vh;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="currentColor" class="bi bi-building-fill-check" viewBox="0 0 16 16" id="svg-1">
                         <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514"/>
                         <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
                       </svg></div>
@@ -137,18 +332,18 @@
                 </button>
             </div>
             <div class="btn-swap swap-active" style="width: 33%; text-align: center;" id="btn-swap-2">
-                <button style="font-weight: bold; font-size: 2vh;" class="p-2" id="tap-btn">
-                    <div class="flex justify-center p-2" style="width: 10vh;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" class="bi bi-currency-dollar" viewBox="0 0 16 16" id="svg-2">
+                <button style="font-weight: bold; font-size: 2vh;" class="padding-for-swap" id="tap-btn">
+                    <div class="flex justify-center padding-for-swap" style="width: 10vh;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="white" class="bi bi-currency-dollar" viewBox="0 0 16 16" id="svg-2">
                         <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
                       </svg></div>
                       <span id="tap-text" >Заработок</span>
                 </button>
             </div>
             <div class="btn-swap" style="width: 33%; text-align: center;" id="btn-swap-3">
-                <button style="font-weight: bold; color: gray; font-size: 2vh;" class="p-2" id="items-btn">
-                    <div class="flex justify-center p-2" style="width: 10vh;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16" id="svg-3">
+                <button style="font-weight: bold; color: gray; font-size: 2vh;" class="padding-for-swap" id="items-btn">
+                    <div class="flex justify-center padding-for-swap" style="width: 10vh;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16" id="svg-3">
                         <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/>
                       </svg></div>
                       <span id="items-text">Предметы</span>
